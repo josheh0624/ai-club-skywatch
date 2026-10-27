@@ -58,6 +58,7 @@ def _resolve_altitude(
     MSL and SFC limits are geometric heights, so geometric altitude is preferred.
     Each falls back to the other available altitude if the preferred one is None.
     """
+    
     if datum == Datum.FL:
         if state.alt_baro_ft is not None:
             return state.alt_baro_ft, AltitudeSource.BAROMETRIC
